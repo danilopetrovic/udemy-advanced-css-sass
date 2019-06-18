@@ -1,6 +1,5 @@
 .row {
   max-width: $grid-width;
-  background-color: #eeeeee;
   margin: 0 auto;
 
   &:not(:last-child) {
@@ -10,7 +9,6 @@
   @include clearfix; /*ubacije mixin za svaki red da ima clearfix od floatovanih kolona*/
 
   [class^="col-"] {
-    background-color: orangered;
     float: left;
 
     &:not(:last-child) {
