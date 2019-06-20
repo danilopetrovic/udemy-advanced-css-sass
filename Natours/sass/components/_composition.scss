@@ -32,7 +32,7 @@
     }
   }
 
-  &:hover &__photo:not(:hover) {
+  &:hover &__photo:not(:hover) { //selektuje slike koje nisu hoverovane i smanjuje im velicinu
     transform: scale(.95);
   }
 }
