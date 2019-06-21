@@ -1,0 +1,3 @@
+- section-about treba transformisati tako da se slaze sa elementom ispod i iznad jer kad se zoom-out-uje onda se vidi belo 
+- section-about slicicama napraviti animaciju da se pojavljuje zeleni outline tako da je u pocetku blizi slici a onda izlazi napolje ujedno sa time sto se vec zumira dok se hoveruje
+ 
