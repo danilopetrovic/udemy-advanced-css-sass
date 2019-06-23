@@ -173,28 +173,30 @@ body {
   transform: translateY(0); }
 
 .card {
+  /*FUNCTIONALITY*/
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
-  height: 50rem; }
+  height: 52rem;
+  /*FRONT SIDE STYLING*/ }
   .card__side {
-    color: white;
-    font-size: 2rem;
-    height: 50rem;
+    height: 52rem;
     transition: all .8s ease;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     backface-visibility: hidden;
-    /*sakriva zadnju stranu prilikom rotacije*/
+    /*sakriva zadnju stranu prilikom rotacije elementa 180 stepeni tako da ga ne vidis ako je rotiran*/
     border-radius: 3px;
-    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    /*kada se postavi background-image onda slika izlazi iz kadra pa se ne vidi border radius i mora da se stavi overflow hidden*/ }
     .card__side--front {
       background-color: white; }
     .card__side--back {
       background-color: green;
-      transform: rotateY(180deg); }
+      transform: rotateY(-180deg); }
       .card__side--back-1 {
         background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
       .card__side--back-2 {
@@ -205,6 +207,48 @@ body {
     transform: rotateY(180deg); }
   .card:hover .card__side--back {
     transform: rotateY(0); }
+  .card__picture {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%); }
+    .card__picture--1 {
+      background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url("../img/nat-5.jpg"); }
+    .card__picture--2 {
+      background-image: url("../img/nat-6.jpg"); }
+    .card__picture--3 {
+      background-image: url("../img/nat-7.jpg"); }
+  .card__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+    color: white;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    width: 75%; }
+  .card__heading-span {
+    /*ne treba ga nestovati zato sto je to potpuno novi element*/
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    /*kada text ide u 2 reda, pading se odnosi samo na pocetak i kraj a ovo mu daje osobinu da oba reda izgledaju isto a ne preseceno*/ }
+    .card__heading-span--1 {
+      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)); }
+  .card__details {
+    margin: 3rem; }
+    .card__details ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto; }
+      .card__details ul li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem; }
+        .card__details ul li:not(:last-child) {
+          border-bottom: 1px solid #eeeeee; }
 
 .composition {
   position: relative; }
@@ -283,6 +327,7 @@ body {
   background-size: cover;
   background-position: top;
   /*clip-path: polygon(50% 0, 100% 100%, 0 100%); !*trougao*!*/
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 70vh, 0 100%);
   position: relative; }
   .header__logo-box {
