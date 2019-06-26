@@ -365,16 +365,30 @@ body {
     /*moze samo 1 transform da postoji pa se u njemu pisu sve promene, zato je morao rucno da se napise skewX jer ne moze da ga nasledi od roditelja (& > *) */
     position: relative; }
   .story__img {
-    height: 100%; }
+    height: 100%;
+    transform: translateX(-4rem) scale(1.4);
+    backface-visibility: hidden;
+    /*popravilo u nekoj starijoj verziji browsera ali sada u novijoj ne treba! inace popravlja bagove u animacijama i tranzicijama*/
+    transition: all .5s; }
   .story__caption {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 20%);
     color: white;
     text-transform: uppercase;
     font-size: 1.7rem;
-    text-align: center; }
+    text-align: center;
+    opacity: 0;
+    transition: all .5s;
+    backface-visibility: hidden;
+    /*popravlja mali "glip" tj bez ovoga se na kraju animacije malo tresu slova*/ }
+  .story:hover .story__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%); }
+  .story:hover .story__img {
+    transform: translateX(-4rem) scale(1);
+    filter: blur(3px) brightness(80%); }
 
 .row {
   max-width: 114rem;
