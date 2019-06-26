@@ -362,9 +362,19 @@ body {
     -webkit-clip-path: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(12deg);
-    /*moze samo 1 transform da postoji pa se u njemu pisu sve promene, zato je morao rucno da se napise skewX jer ne moze da ga nasledi od roditelja (& > *) */ }
+    /*moze samo 1 transform da postoji pa se u njemu pisu sve promene, zato je morao rucno da se napise skewX jer ne moze da ga nasledi od roditelja (& > *) */
+    position: relative; }
   .story__img {
     height: 100%; }
+  .story__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center; }
 
 .row {
   max-width: 114rem;
