@@ -50,7 +50,7 @@ body {
   padding: 3rem; }
 
 .heading-primary {
-  color: white;
+  color: #fff;
   text-transform: uppercase;
   backface-visibility: hidden;
   /*popravlja neki mali skok u animacijama*/
@@ -161,14 +161,14 @@ body {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
 .btn--white {
-  background-color: white;
+  background-color: #fff;
   color: #777; }
   .btn--white::after {
-    background-color: white; }
+    background-color: #fff; }
 
 .btn--green {
   background-color: #55c57a;
-  color: white; }
+  color: #fff; }
   .btn--green::after {
     background-color: #55c57a; }
 
@@ -200,7 +200,7 @@ body {
 
 .btn-text:hover {
   background-color: #55c57a;
-  color: white;
+  color: #fff;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
   transform: translateY(-2px); }
 
@@ -230,7 +230,7 @@ body {
     overflow: hidden;
     /*kada se postavi background-image onda slika izlazi iz kadra pa se ne vidi border radius i mora da se stavi overflow hidden*/ }
     .card__side--front {
-      background-color: white; }
+      background-color: #fff; }
     .card__side--back {
       background-color: green;
       transform: rotateY(-180deg); }
@@ -264,7 +264,7 @@ body {
     font-weight: 300;
     text-transform: uppercase;
     text-align: right;
-    color: white;
+    color: #fff;
     position: absolute;
     top: 12rem;
     right: 2rem;
@@ -302,7 +302,7 @@ body {
     text-align: center; }
   .card__price-box {
     text-align: center;
-    color: white;
+    color: #fff;
     margin-bottom: 8rem; }
   .card__price-only {
     font-size: 1.4rem;
@@ -355,6 +355,51 @@ body {
     -webkit-background-clip: text;
     color: transparent; }
 
+.form__group:not(:last-child) {
+  margin-bottom: 2rem; }
+
+.form__input {
+  font-size: 1.5rem;
+  font-family: inherit;
+  /*ne nasledjuje po defaultu za forme i inpute*/
+  color: inherit;
+  padding: 1.5rem 2rem;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-bottom: 3px solid transparent;
+  /*ovo dodajemo da na fokusu ne skakucu elementi dok se klikcu*/
+  width: 90%;
+  display: block;
+  /*inace moze da se koristi samo placeholder koji radi u svakom browseru*/ }
+  .form__input:focus {
+    outline: none;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid #55c57a; }
+  .form__input:focus:invalid {
+    border-bottom: 3px solid #ff7730; }
+  .form__input:required {
+    box-shadow: none;
+    /*ovim skidam u mozili crveni border kad nije element fokusiran a input required nije zadovoljen*/ }
+  .form__input::-webkit-input-placeholder {
+    color: #999; }
+  .form__input::-moz-placeholder {
+    color: #999; }
+
+.form__label {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-left: 2rem;
+  margin-top: .7rem;
+  display: block;
+  transition: all .3s; }
+
+.form__input:placeholder-shown + .form__label {
+  /*selektuje sa + adjacent (susedni) element na istom nivou*/
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem); }
+
 .story {
   width: 75%;
   margin: 0 auto;
@@ -390,7 +435,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, 20%);
-    color: white;
+    color: #fff;
     text-transform: uppercase;
     font-size: 1.7rem;
     text-align: center;
