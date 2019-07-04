@@ -1,0 +1,52 @@
+.popup {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba($color-black, .8);
+  z-index: 9999;
+
+  &__content {
+    @include absCenter;
+
+    width: 75%;
+    background-color: $color-white;
+    box-shadow: 0 2rem 4rem rgba($color-black, .2);
+    border-radius: 3px;
+    display: table;
+    overflow: hidden; /*ovim odsecemo ivice slikama*/
+  }
+
+  &__left {
+    width: 33.333333%;
+    display: table-cell;
+  }
+
+  &__right {
+    width: 66.666667%;
+    display: table-cell;
+    vertical-align: middle; /*ovu osobinu imaju display: table-cell a roditelj mora biti display: table i onda moze da se centrira vertikalno*/
+    padding: 3rem 5rem;
+  }
+
+  &__img {
+    display: block;
+    width: 100%;
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+
+    column-count: 2;
+    column-gap: 4rem; //1em = 14px (uvek je em fontsize tog elementa)
+    column-rule: 1px solid $color-grey-light-2; /*crta izmedju kolona*/
+
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto; /*crtica kada se prekine rec pa ide u novom redu! stavlja se da bi text izgledao justified i zauzimao manje prostora, takodje zavisi od jezika koji je definisan u html-u kako ce da prekida reci*/
+  }
+}
+
