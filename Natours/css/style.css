@@ -442,7 +442,10 @@ body {
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.8);
-  z-index: 9999; }
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s; }
   .popup__content {
     position: absolute;
     top: 50%;
@@ -454,7 +457,11 @@ body {
     border-radius: 3px;
     display: table;
     overflow: hidden;
-    /*ovim odsecemo ivice slikama*/ }
+    /*ovim odsecemo ivice slikama*/
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.25);
+    /*mora ovako da se napise zato sto u mixinu stoji translate pa ga onda scale gazi tako da moraju oba u 1 redu*/
+    transition: all 0.4s 0.2s; }
   .popup__left {
     width: 33.333333%;
     display: table-cell; }
@@ -479,6 +486,24 @@ body {
     -webkit-hyphens: auto;
     hyphens: auto;
     /*crtica kada se prekine rec pa ide u novom redu! stavlja se da bi text izgledao justified i zauzimao manje prostora, takodje zavisi od jezika koji je definisan u html-u kako ce da prekida reci*/ }
+  .popup:target {
+    opacity: 1;
+    visibility: visible; }
+  .popup:target .popup__content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1); }
+  .popup__close:link, .popup__close:visited {
+    color: #777;
+    position: absolute;
+    top: 2.5rem;
+    right: 2.5rem;
+    font-size: 3rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: all .2s;
+    line-height: 1; }
+  .popup__close:hover {
+    color: #55c57a; }
 
 .story {
   width: 75%;
