@@ -12,7 +12,7 @@ html {
   font-size: 65.5%; // 1 rem = 10px; 10px/16px = 62.5%
 
   /*
-  // ovaj mi ne treba jer je definisan tab-phone a hocu isto i za phone
+  // ovaj mi ne treba jer je definisan veci tab-phone a hocu isto i za manji phone... redosled gazenja je jako bitan da bi radili @media po redu
   @include respond(phone) {
     font-size: 50%;
   }
