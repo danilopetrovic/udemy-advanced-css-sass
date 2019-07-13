@@ -19,7 +19,7 @@ html {
   */
 
   @include respond(tab-land) { // width < 1200?
-    font-size: 56.25%; //1 rem = 8px, 9/16 = 56.25%
+    font-size: 56.25%; //1 rem = 9px, 9/16 = 56.25%
   }
 
   @include respond(tab-port) { // width < 900?
@@ -27,10 +27,15 @@ html {
   }
 
   @include respond(big-desk) {
-    font-size: 75%; //1 rem = 8px, 12/16 = 75%
+    font-size: 75%; //1 rem = 12px, 12/16 = 75%
   }
 }
 
 body {
   box-sizing: border-box;
+  padding: 3rem;
+
+  @include respond(tab-port) { // width < 900?
+    padding: 0;
+  }
 }
