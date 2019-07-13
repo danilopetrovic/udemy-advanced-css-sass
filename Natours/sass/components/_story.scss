@@ -9,8 +9,25 @@
   font-size: $default-font-size;
   transform: skewX(-12deg);
 
+  /*
+  ovo se ne koristi vec je stavio isto u &__text
   & > * {
     transform: skewX(12deg);
+
+    @include respond(phone) {
+      transform: skewX(0);
+    }
+  }
+  */
+
+  @include respond(tab-port) {
+    width: 100%;
+    padding: 4rem;
+    padding-left: 7rem;
+  }
+
+  @include respond(phone) {
+    transform: skewX(0);
   }
 
   &__shape {
@@ -24,6 +41,10 @@
     transform: translateX(-3rem) skewX(12deg); /*moze samo 1 transform da postoji pa se u njemu pisu sve promene, zato je morao rucno da se napise skewX jer ne moze da ga nasledi od roditelja (& > *) */
     //margin-right: 3rem; /*navodno ne valja da se stavlja margina floatovanom elementu pa sam dodao padding-left: 9rem;*/
     position: relative;
+
+    @include respond(phone) {
+      transform: translateX(-3rem) skewX(0);
+    }
   }
 
   &__img {
@@ -34,7 +55,11 @@
   }
 
   &__text {
+    transform: skewX(12deg);
 
+    @include respond(phone) {
+      transform: skewX(0);
+    }
   }
 
   &__caption {
