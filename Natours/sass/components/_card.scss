@@ -12,6 +12,7 @@
     top: 0;
     left: 0;
     width: 100%;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden; /*sakriva zadnju stranu prilikom rotacije elementa 180 stepeni tako da ga ne vidis ako je rotiran*/
     border-radius: 3px;
     box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
