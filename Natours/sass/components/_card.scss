@@ -149,7 +149,10 @@
     font-weight: 100;
   }
 
-  @include respond(tab-port) {
+  /*morao sam da zakomentarisem mixin respond(tab-port) i da napisem rucno jer sam dodao i (hover:none) sto znaci da treba da prikaze taj css opis takodje za uredjaje koji nemaju opciju da hoveruju tj telefoni i tableti*/
+  //@include respond(tab-port) {
+  @media only screen and (max-width: 56.25em),
+  only screen and (hover: none) {
     height: auto;
     border-radius: 3px;
     background-color: $color-white;
