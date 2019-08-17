@@ -2,7 +2,7 @@
 // LOGO
 .logo {
   height: 3.25rem;
-  margin-left: 3rem;
+  margin-left: 2rem;
 }
 
 /////////////////////////////////////////
@@ -21,10 +21,10 @@
     background-color: var(--color-grey-light-2);
     border: none;
     padding: .7rem 2rem;
-    border-radius: 100px;
+    border-radius: 50%;
     width: 90%;
     transition: all .2s;
-    margin: -3.25rem; /*negativna margina uvlaci lupu u div*/
+    margin: -3.25rem; /*negativna margina uvlaci search ikonicu u div*/
 
     &:focus {
       outline: none;
@@ -67,17 +67,48 @@
 /////////////////////////////////////////
 // USER NAVIGATION
 .user-nav {
-  &__icon-box {
+  align-self: stretch; /*roditeljski div je bio align-items: center; pa ovim vracam da zauzima 100% visine*/
 
+  display: flex;
+  align-items: center;
+
+  & > * { //all direct children
+    padding: 0 2rem;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  & > *:hover {
+    background-color: var(--color-grey-light-2);
+  }
+
+  &__icon-box {
+    position: relative; /*ovo nije roditelj al moralo je na dedu da se pozicionira __notification zato sto roditelj ne radi dobro sa svg slikama*/
   }
 
   &__icon {
     height: 2.25rem;
     width: 2.25rem;
+    fill: var(--color-grey-dark-2);
   }
 
   &__notification {
+    font-size: .8rem;
+    height: 1.75rem;
+    width: 1.75rem;
+    border-radius: 100px;
+    background-color: var(--color-primary);
+    color: #fff;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.1rem;
 
+    /*flexbox radi i za pozicioniranje texta a ne samo dece*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &__user {
@@ -87,6 +118,7 @@
   &__user-photo {
     height: 3.75rem;
     border-radius: 50%;
+    margin-right: 1rem;
   }
 
   &__user-name {
