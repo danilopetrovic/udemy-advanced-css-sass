@@ -198,3 +198,54 @@
   text-align: center;
   padding: 2.5rem;
 }
+
+/////////////////////////////////////////
+// GALLERY
+.gallery {
+  display: flex;
+
+  &__photo {
+    width: 100%; /*stavlja se 100% da bi bila responsive*/
+    display: block; /*slika je uvek block ili inline block da nema gore i dole mesta tj margine*/
+  }
+}
+
+
+
+/////////////////////////////////////////
+// HOTEL OVERVIEW
+
+.overview {
+  display: flex;
+
+  &__heading {
+
+  }
+
+  &__stars {
+    margin-right: auto; /*gura sve elemente desno automatski ali sam element zauzima samo onoliko koliko mu je potrebno*/
+  }
+
+  &__icon-star,
+  &__icon-location {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: var(--color-primary)
+  }
+
+  &__location {
+
+  }
+
+  &__rating {
+
+  }
+
+  &__rating-average {
+
+  }
+
+  &__rating-count {
+
+  }
+}

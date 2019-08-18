@@ -79,7 +79,6 @@ body {
 
 .hotel-view {
   background-color: #fff;
-  background-color: orangered;
   height: 80rem;
   flex: 1; }
 
@@ -212,3 +211,21 @@ body {
   color: var(--color-grey-light-4);
   text-align: center;
   padding: 2.5rem; }
+
+.gallery {
+  display: flex; }
+  .gallery__photo {
+    width: 100%;
+    /*stavlja se 100% da bi bila responsive*/
+    display: block;
+    /*slika je uvek block ili inline block da nema gore i dole mesta tj margine*/ }
+
+.overview {
+  display: flex; }
+  .overview__stars {
+    margin-right: auto;
+    /*gura sve elemente desno automatski ali sam element zauzima samo onoliko koliko mu je potrebno*/ }
+  .overview__icon-star, .overview__icon-location {
+    width: 1.75rem;
+    height: 1.75rem;
+    fill: var(--color-primary); }
