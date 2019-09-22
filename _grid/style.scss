@@ -160,9 +160,9 @@
   grid-gap: 30px;
 
   grid-template-areas:  ". head head ."
-                        "box-1 box-2 box-3 side"
-                        "main main main side"
-                        "foot foot foot foot";
+  "box-1 box-2 box-3 side"
+  "main main main side"
+  "foot foot foot foot";
 
   & > * {
     background-color: orangered;
@@ -193,9 +193,9 @@
   }
 }
 
-/***************** 3 div container2 *****************/
+/***************** 3 div container3 *****************/
 
-.container2 {
+.container3 {
   width: 1000px;
   margin: 30px auto;
   background-color: #ddd;
@@ -206,7 +206,7 @@
   grid-gap: 30px;
 
   grid-auto-rows: 80px; /*implicitni deo grida koji se automatski ispunjava kako bi divovi zauzeli nedefinisana polja, moze da se definise ovako, dok je eksplicitni deo grida striktno definisan...*/
-  grid-auto-flow: row dense; /*default je row a moze biti column, dense je da se popune rupe*/
+  grid-auto-flow: row dense; /*default je row! moze biti column! dense je da se popune praznine tako da ne bleje same nego tu udje manje sledece polje iz grida koje moze da stane*/
   grid-auto-columns: .5fr;
 
   // Align grid items to grid areas
@@ -221,7 +221,7 @@
   justify-content: center; /* center / start / end / space-between / space-around / space-evenly */
   align-content: center; /* center / start / end / space-between / space-around / space-evenly */
 
-  .item2 {
+  .item3 {
     padding: 10px;
     color: white;
     font-family: sans-serif;
@@ -244,5 +244,43 @@
       background-color: palevioletred;
       grid-column: 1 / -1;
     }
+  }
+}
+
+/***************** 4 div container4 *****************/
+
+.container4 {
+  width: 1000px;
+  margin: 30px auto;
+  background-color: #ddd;
+
+  display: grid;
+  //grid-template-rows: repeat(2, 150px);
+
+  // Using min-content and max-content
+  //grid-template-columns: max-content 1fr 1fr min-content; /*max-content pravi kolonu velicine kontenta u jednom redu! min-content se pravi kolonu toliku da je sirina kao najveca rec a ostalo se spusta sa brejkovima*/
+  //grid-template-rows: repeat(2, min-content);
+  //grid-template-rows: 150px min-content;
+
+  // Using minmax function
+  width: 90%;
+  grid-template-rows: repeat(2, minmax(150px, min-content));
+  grid-template-columns: minmax(200px, 300px) repeat(3, 1fr); /*minmax ce biti 300px sve dok se ne smanji ekran*/
+
+  .item4 {
+    padding: 10px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 30px;
+    background-color: orangered;
+
+    &--1 { background-color: orangered; }
+    &--2 { background-color: yellowgreen; }
+    &--3 { background-color: blueviolet; }
+    &--4 { background-color: palevioletred; }
+    &--5 { background-color: royalblue; }
+    &--6 { background-color: goldenrod; }
+    &--7 { background-color: crimson; }
+    &--8 { background-color: darkslategray; }
   }
 }

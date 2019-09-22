@@ -27,15 +27,31 @@
 </div>
 
 <hr>
-<div class="container2">
-    <div class="item2 item2--1">Modern</div>
-    <div class="item2 item2--2">CSS</div>
-    <div class="item2 item2--3">with</div>
-    <div class="item2 item2--4">Flexbox</div>
-    <div class="item2 item2--5">and</div>
-    <div class="item2 item2--6">Grid</div>
-    <div class="item2 item2--7">is</div>
-    <div class="item2 item2--8">great</div>
+<div class="container3">
+    <div class="item3 item3--1">Modern</div>
+    <div class="item3 item3--2">CSS</div>
+    <div class="item3 item3--3">with</div>
+    <div class="item3 item3--4">Flexbox</div>
+    <div class="item3 item3--5">and</div>
+    <div class="item3 item3--6">Grid</div>
+    <div class="item3 item3--7">is</div>
+    <div class="item3 item3--8">great</div>
+</div>
+
+<hr>
+<p>grid-template-columns: max-content 1fr 1fr min-content;</p>
+<p>grid-template-rows: repeat(2, min-content); - ako je velicina row fiksna 150px onda ne staje sadrzaj u poslednjem polju, ali sa min-content poslednje polje tj item4--8 uzima velicinu koja mu je potrebna da smesti sva slova</p>
+<p>minmax funkcija (minimum 150px, maximum min-content tj da uzme kompletan kontent i stavi toliku visinu reda)<br> grid-template-rows: repeat(2, minmax(150px, min-content));</p>
+<p>grid-template-columns: minmax(200px, 300px) repeat(3, 1fr); - minmax(200px, 300px) ce uvek biti 300 sve dok se ne smanji ekran npr za mobilni i tu ce onda fiksno ostati 200px</p>
+<div class="container4">
+    <div class="item4 item4--1">Modern Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus blanditiis </div>
+    <div class="item4 item4--2">CSS</div>
+    <div class="item4 item4--3">with</div>
+    <div class="item4 item4--4">Flexbox</div>
+    <div class="item4 item4--5">and</div>
+    <div class="item4 item4--6">Grid</div>
+    <div class="item4 item4--7">is</div>
+    <div class="item4 item4--8">great and amazing and just awesome to work with</div>
 </div>
 </body>
 </html>
