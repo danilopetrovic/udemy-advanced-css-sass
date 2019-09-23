@@ -204,3 +204,40 @@
       background-color: crimson; }
     .container4 .item4--8 {
       background-color: darkslategray; }
+
+/***************** 5 div container4 *****************/
+.container5 {
+  margin: 30px auto;
+  background-color: #ddd;
+  display: grid;
+  grid-template-rows: repeat(2, minmax(150px, min-content));
+  grid-template-columns: repeat(auto-fill, 100px);
+  /*videti u konzoli! pravi 10 kolona po 100px jer je ukupan width 1000px*/
+  grid-template-columns: repeat(auto-fit, 100px);
+  /*videti u konzoli! pravi 8 kolona po 100px i ostavlja prazno 200px*/
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  /*kada je procentualan width kontejnera onda se pri smanjivanju vw prelamaju deca na dole*/
+  grid-auto-rows: minmax(150px, min-content);
+  /*visina automatski napravljenog treceg reda (implicitnog grida) i svakog narednog*/ }
+  .container5 .item5 {
+    padding: 10px;
+    color: white;
+    font-family: sans-serif;
+    font-size: 30px;
+    background-color: orangered; }
+    .container5 .item5--1 {
+      background-color: orangered; }
+    .container5 .item5--2 {
+      background-color: yellowgreen; }
+    .container5 .item5--3 {
+      background-color: blueviolet; }
+    .container5 .item5--4 {
+      background-color: palevioletred; }
+    .container5 .item5--5 {
+      background-color: royalblue; }
+    .container5 .item5--6 {
+      background-color: goldenrod; }
+    .container5 .item5--7 {
+      background-color: crimson; }
+    .container5 .item5--8 {
+      background-color: darkslategray; }
