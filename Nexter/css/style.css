@@ -209,17 +209,28 @@ body {
 
 .features {
   grid-column: center-start / center-end;
-  margin: 15rem 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  grid-gap: 6rem;
-  align-items: start; }
+  margin: 15rem 0; }
+  @supports (display: grid) {
+    .features {
+      /*ovde ide kod ako suportuje browser*/
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+      grid-gap: 6rem;
+      align-items: start; } }
 
 .feature {
+  float: left;
+  width: 33.3333%;
+  margin-bottom: 6rem;
   display: grid;
   grid-template-columns: min-content 1fr;
   grid-row-gap: 1.5rem;
   grid-column-gap: 2.5rem; }
+  @supports (display: grid) {
+    .feature {
+      /*ne moraju se resetovati sve osobine jer su neke ignorisane ako se stavi display grid ili flex!!! ignorisane stvari su float, display inline-block, display tabble cell, vertikal alignment*/
+      width: auto;
+      margin-bottom: 0; } }
   .feature__icon {
     fill: #c69963;
     width: 4.5rem;
